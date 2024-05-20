@@ -32,23 +32,59 @@ window.addEventListener("click", function (e) {
   }
 });
 
-// // Darkmode toggle
-// const darkToggle = document.querySelector("#dark-toggle");
-// const html = document.querySelector("html");
+// Darkmode toggle
+const darkToggle = document.querySelector("#dark-toggle");
+const html = document.querySelector('html');
 
-// darkToggle.addEventListener("click", function () {
-//   if (darkToggle.checked) {
-//     html.classList.add("dark");
-//     localStorage.theme = "dark";
-//   } else {
-//     html.classList.remove("dark");
-//     localStorage.theme = "light";
-//   }
-// });
+darkToggle.addEventListener("click", function () {
+  if (darkToggle.checked) {
+    html.classList.add("dark");
+    localStorage.theme = "dark";
+  } else {
+    html.classList.remove("dark");
+    localStorage.theme = "light";
+  }
+});
+  
+// pindahkan posisi toggle sesuai mode
+if (localStorage.theme === "dark" || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+  darkToggle.checked = true;
+} else {
+  darkToggle.checked = false;
+}
 
-// // pindahkan posisi toggle sesuai mode
-// if (localStorage.theme === "dark" || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
-//   darkToggle.checked = true;
-// } else {
-//   darkToggle.checked = false;
-// }
+
+// Contact Form
+const scriptURL = 'https://script.google.com/macros/s/AKfycbxO2hL9aW4VLD8hZUibmQ2Biqw46Bbr-VJXrcPIAuBppCFiQbjPqMxudy4zXtlYlOEW/exec'
+const form = document.forms['contact-form']
+
+form.addEventListener('submit', e => {
+  e.preventDefault()
+  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+    .then(response => console.log('Success!', response))
+    .catch(error => console.error('Error!', error.message))
+})
+
+
+// Loading From Submit
+document.getElementById('contact-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  document.getElementById('button-text').classList.add('hidden');
+  document.getElementById('loading').classList.remove('hidden');
+  document.getElementById('submit-btn').disabled = true;
+
+  // Simulate form submission
+  setTimeout(function () {
+
+    Swal.fire({
+      title: 'Terima kasih! Pesan anda berhasil terkirim',
+      text: 'Pesan Anda telah dikirim.',
+      icon: 'success',
+      confirmButtonText: 'OK'
+    }).then(() => {
+      document.getElementById('button-text').classList.remove('hidden');
+      document.getElementById('loading').classList.add('hidden');
+      document.getElementById('submit-btn').disabled = false;
+    });
+  }, 2000); // Simulate a delay of 3 seconds
+});
