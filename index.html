@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Muhammad Farid - Portofolio Tailwind CSS</title>
 
+    <!-- AOS  -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
     <!-- Link CSS  -->
     <link rel="stylesheet" href="src/output.css" />
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  
-
 
     <!-- Google Font 'Inter' Start -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -20,6 +20,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
     <!-- Google Font 'Inter' End -->
 
+    <script>
+     if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    document.documentElement.classList.add('dark')
+    } else {
+    document.documentElement.classList.remove('dark')
+    }
+    </script>
   </head>
   <body>
     <!-- Header Start  -->
@@ -36,7 +43,7 @@
               <span class="hamburger-line transition duration-300 ease-in-out origin-bottom-left"></span>
             </button>
 
-            <nav id="nav-menu" class="hidden absolute py-5 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none">
+            <nav id="nav-menu" class="hidden absolute py-5 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none dark:bg-dark dark:shadow-slate-500 lg:dark:bg-transparent">
               <ul class="block lg:flex">
                 <li class="group">
                   <a href="#home" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white">Home</a>
@@ -68,7 +75,6 @@
                     <span class="ml-2 text-sm text-slate-500">dark</span>
                   </div>
                 </li>
-              
               </ul>
             </nav>
           </div>
@@ -84,15 +90,15 @@
           <div class="w-full self-center px-4 lg:w-1/2">
             <h1 class="text-base font-semibold text-primary md:text-xl">Halo Semua 👋, saya <span class="block font-bold text-dark text-4xl mt-1 lg:text-5xl dark:text-white">Muhammad Farid</span></h1>
             <h2 class="font-medium text-secondary text-lg mb-5 lg:text-2xl">Student & <span class="text-dark dark:text-white">Progammer</span></h2>
-            <p class="font-medium text-secondary mb-10 leading-relaxed">Saya adalah seorang mahasiswa dari Universitas Islam Nahdlatul Ulama <span class="text-dark font-bold dark:text-white">Jepara.</span></p>
+            <p class="font-medium text-secondary mb-10 leading-relaxed"></p>
 
             <a href="#contact" class="text-base font-semibold text-white bg-primary py-3 px-8 rounded-full hover:shadow-lg hover:opacity-80 transition duration-300 ease-in-out">Contact Me</a>
           </div>
           <div class="w-full self-end px-4 lg:w-1/2">
             <div class="relative mt-10 lg:mt-9 lg:right-0">
               <img src="dist/img/profile-image.png" alt="Muhammad Farid" class="relative z-10 max-w-full mx-auto" />
-              <span class="absolute bottom-0 left-1/2 -translate-x-1/2 md:scale-125">
-                <svg width="350" height="350" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+              <span class="absolute bottom-0 left-1/2 -translate-x-1/2 md:scale-125 ">
+                <svg width="350" height="350" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" >
                   <path
                     fill="#E11D48"
                     d="M48,-51.5C58.7,-37.2,61.6,-18.6,62.7,1C63.7,20.7,62.9,41.4,52.1,55.4C41.4,69.4,20.7,76.6,2,74.6C-16.6,72.6,-33.3,61.3,-45.7,47.3C-58.1,33.3,-66.2,16.6,-65.2,1C-64.1,-14.6,-53.9,-29.1,-41.5,-43.4C-29.1,-57.8,-14.6,-71.8,2,-73.9C18.6,-75.9,37.2,-65.9,48,-51.5Z"
@@ -111,7 +117,7 @@
     <section id="about" class="pt-36 pb-32 dark:bg-dark">
       <div class="container">
         <div class="flex flex-wrap">
-          <div class="w-full px-4 mb-10 lg:w-1/2">
+          <div class="w-full px-4 mb-10 lg:w-1/2" data-aos="fade-right" data-aos-duration="1000">
             <h4 class="font-bold uppercase text-primary text-lg mb-3">About Me</h4>
             <h2 class="font-bold text-dark text-3xl mb-5 max-w-md lg:text-4xl dark:text-white">Ada pepatah yang mengatakan bahwa tak kenal, Maka tak sayang.</h2>
             <p class="font-medium text-base text-secondary max-w-xl lg:text-lg">
@@ -120,7 +126,7 @@
             </p>
           </div>
 
-          <div class="w-full px-4 lg:w-1/2">
+          <div class="w-full px-4 lg:w-1/2" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
             <h3 class="font-semibold text-dark text-2xl mb-4 lg:text-3xl lg:pt-10 dark:text-white">Mari berteman</h3>
             <p class="font-medium text-base text-secondary mb-6 lg:text-lg">Jangan lupa untuk mengunjungi akun media sosial saya.</p>
             <div class="flex items-center">
@@ -179,10 +185,10 @@
               </a>
             </div>
           </div>
-          <div class="w-full px-4 right-0-0 mt-10">
-            <h2 class="font-bold text-dark text-3xl mb-5 lg:text-4xl text-center">Kartu Ujian Akhir Semester</h2>
+          <div class="w-full px-4 right-0-0 mt-10" data-aos="fade-up" data-aos-duration="1000">
+            <h2 class="font-bold text-dark text-3xl mb-5 lg:text-4xl text-center dark:text-white">Kartu Ujian Akhir Semester</h2>
             <div class="rounded-md shadow-md overflow-hidden">
-              <img src="dist/img/Materi STI/Cetak Kartu Ujian_page-0001.jpg" alt="Landing Page" class="max-w-0" />
+              <img src="dist/img/Materi STI/Cetak Kartu Ujian_page-0001.jpg" alt="Landing Page" class="md:mx-auto xl:max-w-3xl mx-auto" />
             </div>
           </div>
         </div>
@@ -203,28 +209,28 @@
           </div>
         </div>
         <div class="w-full px-4 flex flex-wrap justify-center xl:w-10/12 xl:mx-auto">
-          <div class="mb-12 px-4 md:w-1/2">
+          <div class="mb-12 px-4 md:w-1/2" data-aos="fade-right" data-aos-duration="1000">
             <div class="rounded-md shadow-md overflow-hidden">
               <img src="dist/img/portfolio/github portfolio u.png" alt="Landing Page" class="w-full" />
             </div>
             <a href="https://muhammadfariddd.github.io/" target="_blank"><h3 class="font-semibold text-xl text-dark mt-5 mb-3 hover:text-primary dark:text-white">Landing Page Muhammad Farid</h3></a>
             <p class="font-medium text-base text-secondary">Website ini saya buat dengan menggunakan framework CSS Bootstrap yang terinspirasi dari channel Youtube WEB Progamming Unpas.</p>
           </div>
-          <div class="mb-12 px-4 md:w-1/2">
+          <div class="mb-12 px-4 md:w-1/2" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
             <div class="rounded-md shadow-md overflow-hidden">
               <img src="dist/img/portfolio/web2 u.png" alt="Landing Page" class="w-full" />
             </div>
             <a href="https://muhammadfariddd.github.io/My-Website/" target="_blank"><h3 class="font-semibold text-xl text-dark mt-5 mb-3 hover:text-primary dark:text-white">Coursework Page</h3></a>
             <p class="font-medium text-base text-secondary">Situs web ini mencakup materi dan tugas mata kuliah saya dan sebagai tugas akhir ulangan tengah semester.</p>
           </div>
-          <div class="mb-12 px-4 md:w-1/2">
+          <div class="mb-12 px-4 md:w-1/2" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="">
             <div class="rounded-md shadow-md overflow-hidden">
               <img src="dist/img/portfolio/program login.png" alt="Landing Page" class="w-full" />
             </div>
             <a href="https://muhammadfariddd.github.io/Simple-Project/PROJECT%202/" target="_blank"><h3 class="font-semibold text-xl text-dark mt-5 mb-3 hover:text-primary dark:text-white">Account Login Page</h3></a>
             <p class="font-medium text-base text-secondary">Untuk mengisi waktu luang, saya menggunakannya untuk mencoba membuat halaman login akun yang sederhana. Dan inilah hasilnya.</p>
           </div>
-          <div class="mb-12 px-4 md:w-1/2">
+          <div class="mb-12 px-4 md:w-1/2" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
             <div class="rounded-md shadow-md overflow-hidden">
               <img src="dist/img/portfolio/12.png" alt="Landing Page" class="w-full" />
             </div>
@@ -246,20 +252,41 @@
             <p class="font-medium text-md text-secondary md:text-lg">Berikut adalah beberapa sertifikat yang saya dapatkan dari beberapa kelas Bootcamp yang saya ikuti.</p>
           </div>
         </div>
-        <div class="w-full px-4 flex flex-wrap justify-center xl:w-2/3 xl:mx-auto">
-          <div class="mb-12 px-4 md:w-1/2 text-center">
+        <div class="w-full px-4 flex flex-wrap justify-center xl:w-10/12 xl:mx-auto">
+          <div class="sertifikat-section mb-12 px-4 lg:w-1/3 text-center md:w-1/2">
             <div class="rounded-md shadow-md overflow-hidden">
-              <img src="dist/img/Certicate/dicoding.png" alt="Landing Page" class="w-full" />
+              <img src="dist/img/Certicate/sertifikat_course_dicoding_frontend_pemula_page-0001.jpg" alt="Landing Page" class="w-full" />
             </div>
             <h3 class="font-semibold text-xl text-white mt-5 mb-3">Dicoding Indonesia</h3>
-            <p class="font-medium text-base text-secondary">Sertifikat yang saya raih di kelas belajar pemrograman web dasar oleh dicoding indonesia.</p>
+            <p class="font-medium text-base text-secondary">Sertifikat yang saya raih di kelas belajar membuat front-end web untuk pemula oleh dicoding indonesia.</p>
           </div>
-          <div class="mb-12 px-4 md:w-1/2 text-center">
+          <div class="sertifikat-section mb-12 px-4 lg:w-1/3 text-center md:w-1/2">
             <div class="rounded-md shadow-md overflow-hidden">
               <img src="dist/img/Certicate/permikomnas.png" alt="Landing Page" class="w-full" />
             </div>
             <h3 class="font-semibold text-xl text-white mt-5 mb-3">Permikomnas Jateng</h3>
             <p class="font-medium text-base text-secondary">Sertifikat yang saya terima saat mengikuti program bootcamp dari Permikomnas Jateng kemarin.</p>
+          </div>
+          <div class="sertifikat-section mb-12 px-4 lg:w-1/3 text-center md:w-1/2">
+            <div class="rounded-md shadow-md overflow-hidden">
+              <img src="dist/img/Certicate/sertificate_revou fundamental course_page-0001.jpg" alt="Landing Page" class="w-full" />
+            </div>
+            <h3 class="font-semibold text-xl text-white mt-5 mb-3">Revou Course</h3>
+            <p class="font-medium text-base text-secondary">Sertifikat yang saya terima saat mengikuti program Revou Fundamental Course dari Revou.</p>
+          </div>
+          <div class="sertifikat-section mb-12 px-4 lg:w-1/3 text-center md:w-1/2">
+            <div class="rounded-md shadow-md overflow-hidden">
+              <img src="dist/img/Certicate/Muhammad Farid - E-Certif SC Frontend Development MySkill_page-0001.jpg" alt="Landing Page" class="w-full" />
+            </div>
+            <h3 class="font-semibold text-xl text-white mt-5 mb-3">MySkill</h3>
+            <p class="font-medium text-base text-secondary">Sertifikat yang saya terima saat mengikuti program short class front-end development dari MySkill.</p>
+          </div>
+          <div class="sertifikat-section mb-12 px-4 lg:w-1/3 text-center md:w-1/2">
+            <div class="rounded-md shadow-md overflow-hidden">
+              <img src="dist/img/Certicate/sertificate_edspert_id_page-0001.jpg" alt="Landing Page" class="w-full" />
+            </div>
+            <h3 class="font-semibold text-xl text-white mt-5 mb-3">Edspert.id</h3>
+            <p class="font-medium text-base text-secondary">Sertifikat yang saya terima saat mengikuti program Mini Bootcamp “Web Development for Beginner" dari Edspert.id .</p>
           </div>
         </div>
       </div>
@@ -280,12 +307,12 @@
         </div>
 
         <div class="flex flex-wrap justify-center">
-          <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-10">
+          <div class="material-section w-full px-4 md:w-1/2 xl:w-1/3">
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-10 dark:bg-slate-800">
               <img src="dist/img/Materi STI/pritimohan-shit-gue7uqX-WKY-unsplash.jpg" alt="Progamming" class="w-full" />
               <div class="py-8 px-6">
                 <h3>
-                  <a href="https://drive.google.com/drive/folders/1n-IJqH7XF0w6ymwffDxVyFvH2huz8jit?usp=drive_link" target="_blank" class="block mb-3 font-semibold text-xl text-dark hover:text-primary truncate"
+                  <a href="https://drive.google.com/drive/folders/1n-IJqH7XF0w6ymwffDxVyFvH2huz8jit?usp=drive_link" target="_blank" class="block mb-3 font-semibold text-xl text-dark hover:text-primary truncate dark:text-white"
                     >Pertemuan Pertama - Kontrak Kuliah dan Pengenalan Komputer</a
                   >
                 </h3>
@@ -296,12 +323,12 @@
               </div>
             </div>
           </div>
-          <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-10">
+          <div class="material-section w-full px-4 md:w-1/2 xl:w-1/3">
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-10 dark:bg-slate-800">
               <img src="dist/img/Materi STI/zan-wGqz5YSqsfk-unsplash.jpg" alt="Progamming" class="w-full" />
               <div class="py-8 px-6">
                 <h3>
-                  <a href="https://drive.google.com/drive/folders/17Ht5i0RYo8kPl-Rg3nX-XGXkTrtlKBUb?usp=drive_link" target="_blank" class="block mb-3 font-semibold text-xl text-dark hover:text-primary truncate"
+                  <a href="https://drive.google.com/drive/folders/17Ht5i0RYo8kPl-Rg3nX-XGXkTrtlKBUb?usp=drive_link" target="_blank" class="block mb-3 font-semibold text-xl text-dark hover:text-primary truncate dark:text-white"
                     >Pertemuan Kedua - Hardware</a
                   >
                 </h3>
@@ -310,12 +337,12 @@
               </div>
             </div>
           </div>
-          <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-10">
+          <div class="material-section w-full px-4 md:w-1/2 xl:w-1/3">
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-10 dark:bg-slate-800">
               <img src="dist/img/Materi STI/Software.jpg" alt="Progamming" class="w-full" />
               <div class="py-8 px-6">
                 <h3>
-                  <a href="https://drive.google.com/drive/folders/1dEfQbSVeGZbimc7jhQHfx5wt85a7Zdvc?usp=drive_link" target="_blank" class="block mb-3 font-bold text-xl text-dark hover:text-primary truncate">Pertemuan Ketiga - Software</a>
+                  <a href="https://drive.google.com/drive/folders/1dEfQbSVeGZbimc7jhQHfx5wt85a7Zdvc?usp=drive_link" target="_blank" class="block mb-3 font-bold text-xl text-dark hover:text-primary truncate dark:text-white">Pertemuan Ketiga - Software</a>
                 </h3>
                 <p class="font-medium text-base text-secondary mb-4 truncate">
                   Pokok Bahasan : Sejarah perkembangan perangkat lunak dan mengenal macam-macam software :a. Perkembangan perangkat lunakb. Perangkat lunak sistem operasi c. Perangkat lunak aplikasi
@@ -324,12 +351,12 @@
               </div>
             </div>
           </div>
-          <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-10">
+          <div class="material-section w-full px-4 md:w-1/2 xl:w-1/3">
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-10 dark:bg-slate-800">
               <img src="dist/img/Materi STI/Typing.jpg" alt="Progamming" class="w-full" />
               <div class="py-8 px-6">
                 <h3>
-                  <a href="https://drive.google.com/drive/folders/16JUiCSiI4u8_BWIS65mm-uFvJ0fQsVBe?usp=drive_link" target="_blank" class="block mb-3 font-bold text-xl text-dark hover:text-primary truncate"
+                  <a href="https://drive.google.com/drive/folders/16JUiCSiI4u8_BWIS65mm-uFvJ0fQsVBe?usp=drive_link" target="_blank" class="block mb-3 font-bold text-xl text-dark hover:text-primary truncate dark:text-white"
                     >Pertemuan Keempat - Mengetik Dengan 10 Jari</a
                   >
                 </h3>
@@ -338,12 +365,12 @@
               </div>
             </div>
           </div>
-          <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-10">
+          <div class="material-section w-full px-4 md:w-1/2 xl:w-1/3">
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-10 dark:bg-slate-800">
               <img src="dist/img/Materi STI/excellwebp.jpg" alt="Progamming" class="w-full" />
               <div class="py-8 px-6">
                 <h3>
-                  <a href="https://drive.google.com/drive/folders/15pg_nd6-WShgF55NMCVQjZlzGSvH_ze4?usp=drive_link" target="_blank" class="block mb-3 font-bold text-xl text-dark hover:text-primary truncate"
+                  <a href="https://drive.google.com/drive/folders/15pg_nd6-WShgF55NMCVQjZlzGSvH_ze4?usp=drive_link" target="_blank" class="block mb-3 font-bold text-xl text-dark hover:text-primary truncate dark:text-white"
                     >Pertemuan Kelima - Microsoft Excell</a
                   >
                 </h3>
@@ -352,12 +379,12 @@
               </div>
             </div>
           </div>
-          <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-10">
+          <div class="material-section w-full px-4 md:w-1/2 xl:w-1/3">
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-10 dark:bg-slate-800">
               <img src="dist/img/Materi STI/Why-learning-Microsoft-Excel-is-Important.jpg" alt="Progamming" class="w-full" />
               <div class="py-8 px-6">
                 <h3>
-                  <a href="https://drive.google.com/drive/folders/1VGeg0ZwekiKWvnJWYOdS8IVDZY3DTldK?usp=drive_link" target="_blank" class="block mb-3 font-bold text-xl text-dark hover:text-primary truncate"
+                  <a href="https://drive.google.com/drive/folders/1VGeg0ZwekiKWvnJWYOdS8IVDZY3DTldK?usp=drive_link" target="_blank" class="block mb-3 font-bold text-xl text-dark hover:text-primary truncate dark:text-white"
                     >Pertemuan Keenam - Rumus MS Excell</a
                   >
                 </h3>
@@ -366,12 +393,12 @@
               </div>
             </div>
           </div>
-          <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-10">
+          <div class="material-section w-full px-4 md:w-1/2 xl:w-1/3">
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-10 dark:bg-slate-800">
               <img src="dist/img/Materi STI/CMS web.jpg" alt="Progamming" class="w-full" />
               <div class="py-8 px-6">
                 <h3>
-                  <a href="https://drive.google.com/drive/folders/17kTUcU1N3ss4tOpZfwC75tjhocE7PV_L?usp=drive_link" target="_blank" class="block mb-3 font-bold text-xl text-dark hover:text-primary truncate"
+                  <a href="https://drive.google.com/drive/folders/17kTUcU1N3ss4tOpZfwC75tjhocE7PV_L?usp=drive_link" target="_blank" class="block mb-3 font-bold text-xl text-dark hover:text-primary truncate dark:text-white"
                     >Pertemuan Ketujuh - Blog Pribadi</a
                   >
                 </h3>
@@ -380,24 +407,24 @@
               </div>
             </div>
           </div>
-          <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-10">
+          <div class="material-section w-full px-4 md:w-1/2 xl:w-1/3">
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-10 dark:bg-slate-800">
               <img src="dist/img/Materi STI/Screenshot 2024-01-05 171908.png" alt="Progamming" class="w-full" />
               <div class="py-8 px-6">
                 <h3>
-                  <a href="https://drive.google.com/drive/folders/1IaSurDv0kPBNMmmLxbIyIfilhJwWpE1h?usp=drive_link" target="_blank" class="block mb-3 font-bold text-xl text-dark hover:text-primary truncate">Pertemuan Kedelapan - UTS</a>
+                  <a href="https://drive.google.com/drive/folders/1IaSurDv0kPBNMmmLxbIyIfilhJwWpE1h?usp=drive_link" target="_blank" class="block mb-3 font-bold text-xl text-dark hover:text-primary truncate dark:text-white">Pertemuan Kedelapan - UTS</a>
                 </h3>
                 <p class="font-medium text-base text-secondary mb-4 truncate">Pokok Bahasan : Membuat Website dan Unggah Seluruh Latihan dan Tugas</p>
                 <a href="https://drive.google.com/drive/folders/1IaSurDv0kPBNMmmLxbIyIfilhJwWpE1h?usp=drive_link" target="_blank" class="font-medium text-sm text-white bg-primary py-2 px-4 rounded-lg hover:opacity-80">Lihat Disini</a>
               </div>
             </div>
           </div>
-          <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-10">
+          <div class="material-section w-full px-4 md:w-1/2 xl:w-1/3">
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-10 dark:bg-slate-800">
               <img src="dist/img/Materi STI/CMS Wordpress.jpg" alt="Progamming" class="w-full" />
               <div class="py-8 px-6">
                 <h3>
-                  <a href="https://drive.google.com/drive/folders/1KP5Csx7Sgh-m6jwyJ0swFr6TfpLLpaoC?usp=drive_link" target="_blank" class="block mb-3 font-bold text-xl text-dark hover:text-primary truncate"
+                  <a href="https://drive.google.com/drive/folders/1KP5Csx7Sgh-m6jwyJ0swFr6TfpLLpaoC?usp=drive_link" target="_blank" class="block mb-3 font-bold text-xl text-dark hover:text-primary truncate dark:text-white"
                     >Pertemuan Kesembilan - Content Management System (CMS)</a
                   >
                 </h3>
@@ -406,12 +433,12 @@
               </div>
             </div>
           </div>
-          <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-10">
+          <div class="material-section w-full px-4 md:w-1/2 xl:w-1/3">
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-10 dark:bg-slate-800">
               <img src="dist/img/Materi STI/Screenshot 2024-01-05 173223.png" alt="Progamming" class="w-full" />
               <div class="py-8 px-6">
                 <h3>
-                  <a href="https://drive.google.com/drive/folders/1tmjE0N8ykn65zKa0OrDbAxgX0VZqsSvp?usp=drive_link" target="_blank" class="block mb-3 font-bold text-xl text-dark hover:text-primary truncate"
+                  <a href="https://drive.google.com/drive/folders/1tmjE0N8ykn65zKa0OrDbAxgX0VZqsSvp?usp=drive_link" target="_blank" class="block mb-3 font-bold text-xl text-dark hover:text-primary truncate dark:text-white"
                     >Pertemuan Kesepuluh - Wordpress</a
                   >
                 </h3>
@@ -420,12 +447,12 @@
               </div>
             </div>
           </div>
-          <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-10">
+          <div class="material-section w-full px-4 md:w-1/2 xl:w-1/3">
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-10 dark:bg-slate-800">
               <img src="dist/img/Materi STI/Screenshot 2024-01-05 173939.png" alt="Progamming" class="w-full" />
               <div class="py-8 px-6">
                 <h3>
-                  <a href="https://drive.google.com/drive/folders/1I81VbcWIYLjy8JtF6cC7UoGPXBw36g91?usp=drive_link" target="_blank" class="block mb-3 font-bold text-xl text-dark hover:text-primary truncate"
+                  <a href="https://drive.google.com/drive/folders/1I81VbcWIYLjy8JtF6cC7UoGPXBw36g91?usp=drive_link" target="_blank" class="block mb-3 font-bold text-xl text-dark hover:text-primary truncate dark:text-white"
                     >Pertemuan Kesebelas - PowerPoint</a
                   >
                 </h3>
@@ -434,12 +461,12 @@
               </div>
             </div>
           </div>
-          <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-10">
+          <div class="material-section w-full px-4 md:w-1/2 xl:w-1/3">
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-10 dark:bg-slate-800">
               <img src="dist/img/Materi STI/basis data.jpg" alt="Progamming" class="w-full" />
               <div class="py-8 px-6">
                 <h3>
-                  <a href="https://drive.google.com/drive/folders/1PrspCPixMC-RbyrlnPO0GdNg6S4igWFk?usp=drive_link" target="_blank" class="block mb-3 font-bold text-xl text-dark hover:text-primary truncate"
+                  <a href="https://drive.google.com/drive/folders/1PrspCPixMC-RbyrlnPO0GdNg6S4igWFk?usp=drive_link" target="_blank" class="block mb-3 font-bold text-xl text-dark hover:text-primary truncate dark:text-white"
                     >Pertemuan Kedua belas - Database</a
                   >
                 </h3>
@@ -451,12 +478,12 @@
               </div>
             </div>
           </div>
-          <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-10">
+          <div class="material-section w-full px-4 md:w-1/2 xl:w-1/3">
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-10 dark:bg-slate-800">
               <img src="dist/img/Materi STI/SIManagement.jpg" alt="Progamming" class="w-full" />
               <div class="py-8 px-6">
                 <h3>
-                  <a href="https://drive.google.com/drive/folders/1Y76DwlzX18NXt0gIve3z1MssnRooKacz?usp=drive_link" target="_blank" class="block mb-3 font-bold text-xl text-dark hover:text-primary truncate"
+                  <a href="https://drive.google.com/drive/folders/1Y76DwlzX18NXt0gIve3z1MssnRooKacz?usp=drive_link" target="_blank" class="block mb-3 font-bold text-xl text-dark hover:text-primary truncate dark:text-white"
                     >Pertemuan Ketiga belas - Sistem Informasi Manajemen</a
                   >
                 </h3>
@@ -468,12 +495,12 @@
               </div>
             </div>
           </div>
-          <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-10">
+          <div class="material-section w-full px-4 md:w-1/2 xl:w-1/3">
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-10 dark:bg-slate-800">
               <img src="dist/img/Materi STI/Proses Komunikasi Data.jpg" alt="Progamming" class="w-full" />
               <div class="py-8 px-6">
                 <h3>
-                  <a href="https://drive.google.com/drive/folders/1aHRf8u4LA4xxKzZVvg1yhr1ciFBWsy_S?usp=drive_link" target="_blank" class="block mb-3 font-bold text-xl text-dark hover:text-primary truncate"
+                  <a href="https://drive.google.com/drive/folders/1aHRf8u4LA4xxKzZVvg1yhr1ciFBWsy_S?usp=drive_link" target="_blank" class="block mb-3 font-bold text-xl text-dark hover:text-primary truncate dark:text-white"
                     >Pertemuan Keempat belas - Jaringan dan Komunikasi</a
                   >
                 </h3>
@@ -677,6 +704,41 @@
       <span class="block w-5 h-5 border-t-2 border-l-2 rotate-45 mt-2"></span>
     </a>
     <!-- Back to top End  -->
+
+    <!-- GSAP script  -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/TextPlugin.min.js"></script>
+    <script>
+      gsap.registerPlugin(TextPlugin)
+      gsap.to('.leading-relaxed', {duration: 3, delay: 1.5, text:'Saya adalah seorang mahasiswa dari Universitas Islam Nahdlatul Ulama <span class="text-dark font-bold dark:text-white">Jepara.</span>' })
+      gsap.from('header', {duration: 1.5, y: '-100%', opacity: 0, ease: 'bounce'});
+      gsap.from('#home .self-center', {duration: 1, x: -50, opacity: 0, delay: 0.5, ease: 'back'});
+      gsap.from('#home .relative > span', {duration: 1, x: +50, opacity: 0, delay: 0.5, ease: 'back'});
+      gsap.from('#home img', {duration: 1, x: +50, opacity: 0, delay: 0.5, ease: 'back'});
+    </script>
+
+
+    <!-- AOS script  -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+    const materialSection = document.querySelectorAll('.material-section');
+    const sertifikatSection = document.querySelectorAll('.sertifikat-section');
+    materialSection.forEach((img, i) => {
+      img.dataset.aos = 'zoom-in',
+      img.dataset.aosDelay = i * 50
+      img.dataset.aosDuration = 1000
+    }); 
+    
+    sertifikatSection.forEach((img, i) => {
+      img.dataset.aos = 'flip-left',
+      img.dataset.aosDelay = i * 100
+      img.dataset.aosDuration = 1000
+    });
+
+      AOS.init({
+        once: true,
+      });
+    </script>
 
     <script src="dist/js/script.js"></script>
   </body>
