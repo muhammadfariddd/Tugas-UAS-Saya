@@ -19,4 +19,6 @@ Light Mode
 
 Dark Mode
 
-![Screenshot 2024-05-20 094037](https://github.com/muhammadfariddd/Tugas-UAS-Saya/assets/142093385/ba37678b-2393-44b0-90cf-27a5e6384e20)
+![Screenshot 2024-05-20 093910](https://github.com/muhammadfariddd/Tugas-UAS-Saya/assets/142093385/8ea21d53-8914-45f4-beb4-371e6915b108)
+
+
